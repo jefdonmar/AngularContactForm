@@ -108,12 +108,31 @@ _angular2['default'].module('app', ['ui.router']).constant('PARSE', {
 Object.defineProperty(exports, '__esModule', {
   value: true
 });
-var ContactService = function ContactService() {
+var ContactService = function ContactService($http, PARSE) {
 
-  var vm = this;
+  var url = PARSE.URL + 'classes/contact';
+
+  this.addContact = addContact;
+  this.getContacts = getContacts;
+
+  function Contact(contactObj) {
+    this.name = contactObj.name;
+    this.email = contactObj.email;
+    this.website = contactObj.website;
+    this.message = contactObj.message;
+  }
+
+  function addContact(contactObj) {
+    var contact = new Contact(contactObj);
+    return $http.post(url, contact, PARSE.CONFIG);
+  }
+
+  function getContacts(contactObj) {
+    return $http.get(url, PARSE.CONFIG);
+  }
 };
 
-ContactService.$inject = [''];
+ContactService.$inject = ['$http', 'PARSE'];
 
 exports['default'] = ContactService;
 module.exports = exports['default'];
