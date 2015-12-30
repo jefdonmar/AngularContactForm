@@ -3,28 +3,10 @@ let AddController = function(ContactService, $state, $scope) {
   let vm = this;
 
   vm.addContact = addContact;
-  vm.checkName = checkName;
+  vm.checkEmpty = checkEmpty;
   vm.checkEmail = checkEmail;
   vm.checkWebsite = checkWebsite;
-  vm.checkMessage = checkMessage;
-
-  // Name Field 
-  $scope.$watch('contact.name', function (input) {
-
-    if(!input) return; 
-
-    if(!checkName(input)) {
-      $scope.contact.nameError = 'Name field must be filled in';
-      console.log('Name field must be filled in');
-    } else {
-      $scope.contact.nameError = undefined;
-    }
-
-  });
-
-  function checkName (x) {
-    return x ? true : false;
-  }
+  
 
   // Email Field 
   $scope.$watch('contact.email', function (input) {
@@ -64,28 +46,20 @@ let AddController = function(ContactService, $state, $scope) {
     return pattern.test(x);
   }
 
-  // Message Field 
 
-  $scope.$watch('contact.message', function (input) {
-
-    if(!input) return; 
-
-    if(!checkMessage(input)) {
-      $scope.contact.messageError = 'Message field must be filled in';
-      console.log('Message field must be filled in');
-    } else {
-      $scope.contact.messageError = undefined;
-    }
-
-  });
-
-  function checkMessage (x) {
-    return x ? true : false;
-  }
-
-
+  // Add Contact function
 
   function addContact (contactObj) {
+
+    if(!checkEmpty(contactObj.name)) {
+      console.log('Name is empty');
+      $scope.contact.nameError = 'Name field cannot be empty';
+    }
+
+    if(!checkEmpty(contactObj.message)) {
+      console.log('Message is empty');
+      $scope.contact.messageError = 'Message field cannot be empty';
+    }
 
     console.log('YAY!! Addition');
 
@@ -94,6 +68,12 @@ let AddController = function(ContactService, $state, $scope) {
       $state.go('root.home');
 
     });
+  }
+
+  // Check Empty Function 
+
+  function checkEmpty (x) {
+    return x ? true : false;
   }
 
 };
