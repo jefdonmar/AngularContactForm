@@ -1,16 +1,18 @@
-<form ng-submit="vm.addContact">
+<form ng-submit="vm.addContact(contact)">
   <h2> Add a New Contact</h2>
 
   <input 
-    placeholder ="Name">
+    placeholder= "Name"
+    ng-model= "contact.name">
   <input 
-    placeholder ="Email">
+    placeholder= "Email"
+    ng-model= "contact.email">
   <input 
-    placeholder ="Website">
+    placeholder= "Website"
+    ng-model= "contact.website">
   <textarea
-    placeholder ="A message"
-    >  
+    placeholder= "A message"
+    ng-model= "contact.message">  
   </textarea> 
   <button>Submit</button>
-
 </form>
