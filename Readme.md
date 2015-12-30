@@ -1,6 +1,11 @@
-## Welcome to My Project
+## Welcome to My Angular Contact Form 
 
-> I am your Readme.md file, you should probably update me.
+In this repository, I build a basic contact form/list using AngularJS.
+
+Here is a link to my deployment: animated-behavior.surge.sh
+
+I hope you enjoy!
+
 
 
 ## Usage
