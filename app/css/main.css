@@ -6388,6 +6388,31 @@ th.hide-for-touch {
     display: table-cell !important; } }
 
 body {
-  background: #e2ebf3; }
+  background: #e2ebf3;
+  width: 800px;
+  margin: 20px auto; }
+
+.contact-info {
+  background: white;
+  border: 3px solid navy;
+  padding: 10px;
+  width: 50%;
+  display: inline-block; }
+  .contact-info h3 {
+    text-align: center;
+    font-weight: bold; }
+
+.top-bar {
+  margin-bottom: 30px; }
+
+form {
+  width: 600px;
+  margin: 5px auto;
+  background: white;
+  border: 3px solid navy;
+  padding: 10px; }
+  form h2 {
+    text-align: center;
+    font-weight: bold; }
 
 /*# sourceMappingURL=main.css.map */
