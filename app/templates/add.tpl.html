@@ -4,15 +4,27 @@
   <input 
     placeholder= "Name"
     ng-model= "contact.name">
+    <label ng-show="contact.nameError" class="error">
+      {{ contact.nameError }}
+    </label>
   <input 
     placeholder= "Email"
     ng-model= "contact.email">
+    <label ng-show="contact.emailError" class="error">
+      {{ contact.emailError }}
+    </label>
   <input 
     placeholder= "Website"
     ng-model= "contact.website">
+     <label ng-show="contact.websiteError" class="error">
+      {{ contact.websiteError }}
+    </label>
   <textarea
     placeholder= "A message"
     ng-model= "contact.message">  
   </textarea> 
+  <label ng-show="contact.messageError" class="error">
+    {{ contact.messageError }}
+  </label>
   <button>Submit</button>
 </form>
