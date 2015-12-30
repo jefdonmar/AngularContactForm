@@ -33,12 +33,12 @@ module.exports = exports['default'];
 Object.defineProperty(exports, '__esModule', {
   value: true
 });
-var AddController = function AddController() {
+var AddController = function AddController(ContactService, $state, $scope) {
 
   var vm = this;
 };
 
-AddController.$inject = [''];
+AddController.$inject = ['ContactService', '$state', '$scope'];
 
 exports['default'] = AddController;
 module.exports = exports['default'];
@@ -49,12 +49,18 @@ module.exports = exports['default'];
 Object.defineProperty(exports, '__esModule', {
   value: true
 });
-var HomeController = function HomeController() {
+var HomeController = function HomeController(ContactService) {
 
   var vm = this;
+
+  ContactService.getContacts().then(function (res) {
+    console.log(res);
+    vm.myContacts = res.data.results;
+    console.log(vm.myContacts);
+  });
 };
 
-HomeController.$inject = [''];
+HomeController.$inject = ['ContactService'];
 
 exports['default'] = HomeController;
 module.exports = exports['default'];

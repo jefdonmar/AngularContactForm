@@ -1,9 +1,9 @@
-let AddController = function() {
+let AddController = function(ContactService, $state, $scope) {
 
   let vm = this;
 
 };
 
-AddController.$inject = [''];
+AddController.$inject = ['ContactService', '$state', '$scope'];
 
 export default AddController;
