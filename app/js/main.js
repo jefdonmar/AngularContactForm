@@ -36,6 +36,18 @@ Object.defineProperty(exports, '__esModule', {
 var AddController = function AddController(ContactService, $state, $scope) {
 
   var vm = this;
+
+  vm.addContact = addContact;
+
+  function addContact(contactObj) {
+
+    console.log('YAY!! Addition');
+
+    ContactService.addContact(contactObj).then(function (res) {
+      console.log(res);
+      $state.go('root.home');
+    });
+  }
 };
 
 AddController.$inject = ['ContactService', '$state', '$scope'];
