@@ -92,7 +92,15 @@ var _servicesContactService = require('./services/contact.service');
 
 var _servicesContactService2 = _interopRequireDefault(_servicesContactService);
 
-_angular2['default'].module('app', ['ui.router']).config(_config2['default']).controller('HomeController', _controllersHomeController2['default']).controller('AddController', _controllersAddController2['default']).service('ContactService', _servicesContactService2['default']);
+_angular2['default'].module('app', ['ui.router']).constant('PARSE', {
+  URL: 'https://api.parse.com/1/',
+  CONFIG: {
+    headers: {
+      'X-PARSE-Application-Id': 'qwFfGX2xR8lCxcjOJkX2uqWcWptm32YYu2lyGihK',
+      'X-PARSE-REST-API-Key': 'oD2ardPypMrRD70jmY1jEZxNyYMM5UQXH0BCPZqs'
+    }
+  }
+}).config(_config2['default']).controller('HomeController', _controllersHomeController2['default']).controller('AddController', _controllersAddController2['default']).service('ContactService', _servicesContactService2['default']);
 
 },{"./config":1,"./controllers/add.controller":2,"./controllers/home.controller":3,"./services/contact.service":5,"angular":8,"angular-ui-router":6}],5:[function(require,module,exports){
 'use strict';
