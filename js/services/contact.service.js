@@ -17,10 +17,9 @@ let ContactService = function($http, PARSE) {
     return $http.post(url, contact, PARSE.CONFIG);
   }
 
-  function getContacts (contactObj) {
+  function getContacts () {
     return $http.get(url, PARSE.CONFIG);
   }
-
 
 
 };
