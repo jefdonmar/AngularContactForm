@@ -2,7 +2,7 @@
 
 In this repository, I build a basic contact form/list using AngularJS.
 
-Here is a link to my deployment: animated-behavior.surge.sh
+Here is a link to my deployment: grieving-team.surge.sh
 
 I hope you enjoy!
 
